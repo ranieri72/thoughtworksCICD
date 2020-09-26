@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85401C38251C0D430000424C /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85401C37251C0D430000424C /* Hotel.swift */; };
+		85401C3B251C0F6F0000424C /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85401C3A251C0F6F0000424C /* DataModel.swift */; };
+		85401C3D251C11490000424C /* HotelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85401C3C251C11490000424C /* HotelManager.swift */; };
+		85C694DA251BD79A009D6DFF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C694D9251BD79A009D6DFF /* MainCoordinator.swift */; };
 		A90E0A922354D59100B7AEFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E0A912354D59100B7AEFC /* AppDelegate.swift */; };
 		A90E0A942354D59100B7AEFC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E0A932354D59100B7AEFC /* SceneDelegate.swift */; };
 		A90E0A962354D59100B7AEFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E0A952354D59100B7AEFC /* ContentView.swift */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		85401C37251C0D430000424C /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
+		85401C3A251C0F6F0000424C /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		85401C3C251C11490000424C /* HotelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelManager.swift; sourceTree = "<group>"; };
+		85C694D9251BD79A009D6DFF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A90E0A8E2354D59100B7AEFC /* iOSTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90E0A912354D59100B7AEFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A90E0A932354D59100B7AEFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +84,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85401C39251C0E980000424C /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				85401C3C251C11490000424C /* HotelManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		85C694D8251BD75F009D6DFF /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				85C694D9251BD79A009D6DFF /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		85C694DB251BEA59009D6DFF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				85401C37251C0D430000424C /* Hotel.swift */,
+				85401C3A251C0F6F0000424C /* DataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A90E0A852354D59100B7AEFC = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +132,9 @@
 		A90E0A902354D59100B7AEFC /* iOSTestProject */ = {
 			isa = PBXGroup;
 			children = (
+				85401C39251C0E980000424C /* Manager */,
+				85C694DB251BEA59009D6DFF /* Model */,
+				85C694D8251BD75F009D6DFF /* Coordinator */,
 				A90E0A912354D59100B7AEFC /* AppDelegate.swift */,
 				A90E0A932354D59100B7AEFC /* SceneDelegate.swift */,
 				A90E0A952354D59100B7AEFC /* ContentView.swift */,
@@ -267,9 +303,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85401C38251C0D430000424C /* Hotel.swift in Sources */,
 				A90E0A922354D59100B7AEFC /* AppDelegate.swift in Sources */,
+				85C694DA251BD79A009D6DFF /* MainCoordinator.swift in Sources */,
 				A90E0A942354D59100B7AEFC /* SceneDelegate.swift in Sources */,
+				85401C3D251C11490000424C /* HotelManager.swift in Sources */,
 				A90E0A962354D59100B7AEFC /* ContentView.swift in Sources */,
+				85401C3B251C0F6F0000424C /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
