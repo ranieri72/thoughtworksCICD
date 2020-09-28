@@ -19,7 +19,7 @@ class iOSTestProjectTests: XCTestCase {
 
         let currentHotel = sut?.checkBooking(startDate: startDate, endDate: endDate, discount: false)
         let correctHotel = Hotel(
-            name: "Parque das flores",
+            name: "Parque das floress",
             rating: 3,
             regularPriceOnWeekdays: 110,
             discountPriceOnWeekdays: 80,
