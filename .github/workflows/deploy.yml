@@ -1,4 +1,4 @@
-name: Swift
+name: Deploy
 
 on:
   push:
@@ -17,13 +17,13 @@ jobs:
     steps:
     - name: Checkout repository
     - uses: actions/checkout@v2
-    
+
     - name: Select Xcode
       run: sudo xcode-select -switch /Applications/Xcode_11.3.app
       
     - name: Xcode version
       run: /usr/bin/xcodebuild -version
-    
+      
     #- name: GitHub Action for SwiftLint
     #  uses: norio-nomura/action-swiftlint@3.1.0
     - name: lint
@@ -34,3 +34,11 @@ jobs:
       
     - name: Run tests
       run: exec ./.github/scripts/test_app.sh
+      
+    - name: 'Upload app to TestFlight'
+      uses: apple-actions/upload-testflight-build@v1
+      with:
+        app-path: 'path/to/application.ipa'
+        issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
+        api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }}
+        api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
