@@ -18,7 +18,7 @@ jobs:
           with:
             args: --strict
 
-    Build, test and deploy:
+    'Build, test and deploy':
         runs-on: macos-10.15
 
         steps:
