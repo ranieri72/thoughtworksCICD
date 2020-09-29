@@ -1,14 +1,13 @@
 name: Test
 
 on:
-  push:
     push:
-      branches:
-      - 'feature/*'
+        branches:
+        - 'feature/*'
     pull_request:
-      branches: [ master ]
+        branches: [ master ]
     schedule:
-    - cron: "0 2 * * 1-5"
+        - cron: "0 2 * * 1-5"
 
 jobs:
   build:
@@ -17,7 +16,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
     - name: Select Xcode
       run: sudo xcode-select -switch /Applications/Xcode_11.3.app
     - name: Xcode version
