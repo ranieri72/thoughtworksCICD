@@ -23,7 +23,7 @@ jobs:
           with:
             args: --strict
 
-    'Build and test':
+    Build-Test:
         runs-on: macos-10.15
 
         steps:
