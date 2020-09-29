@@ -2,12 +2,9 @@ name: Deploy
 
 on:
   push:
-    push:
-      branches: [ master ]
     pull_request:
-      branches: [ master ]
-    schedule:
-    - cron: "0 2 * * 1-5"
+      branches:
+      - 'releases/*'
 
 jobs:
   build:
@@ -17,24 +14,18 @@ jobs:
     steps:
     - name: Checkout repository
     - uses: actions/checkout@v2
-
     - name: Select Xcode
       run: sudo xcode-select -switch /Applications/Xcode_11.3.app
-      
     - name: Xcode version
       run: /usr/bin/xcodebuild -version
-      
     #- name: GitHub Action for SwiftLint
     #  uses: norio-nomura/action-swiftlint@3.1.0
     - name: lint
       run: swift format lint --configuration .swift-format-config -r .
-      
     - name: Build
       run: exec ./.github/scripts/build_app.sh
-      
     - name: Run tests
       run: exec ./.github/scripts/test_app.sh
-      
     - name: 'Upload app to TestFlight'
       uses: apple-actions/upload-testflight-build@v1
       with:
