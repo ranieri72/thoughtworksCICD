@@ -20,7 +20,7 @@ class DataModel {
             discountPriceOnWeekends: 80
         )
         hotelList.append(hotel1)
-        
+
         let hotel2 = Hotel(
             name: "Jardim Botânico",
             rating: 4,
@@ -40,7 +40,7 @@ class DataModel {
             discountPriceOnWeekends: 40
         )
         hotelList.append(hotel3)
-        
+
         return hotelList
     }
 

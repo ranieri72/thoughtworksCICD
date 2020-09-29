@@ -15,8 +15,8 @@ jobs:
   
         - name: GitHub Action for SwiftLint
           uses: norio-nomura/action-swiftlint@3.1.0
-          with:
-            args: --strict
+          #with:
+            #args: --strict
 
     Build-Test-Deploy:
         runs-on: macos-10.15

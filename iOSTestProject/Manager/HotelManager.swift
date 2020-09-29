@@ -28,7 +28,7 @@ class HotelManager: HotelManagerProtocol {
             let totalWeekdayCost = Float(bookingDays.weekdays) * weekdayCost
 
             let totalBookingCost = totalWeekdayCost + totalWeekendCost
-            
+
             if totalBookingCost < bestBooking.totalCost ||
                 (totalBookingCost == bestBooking.totalCost &&
                     hotel.rating > bestBooking.hotel?.rating ?? 0) {
@@ -41,24 +41,25 @@ class HotelManager: HotelManagerProtocol {
     
     private func countDays(startDate: Date, endDate: Date) -> (weekdays: Int, weekends: Int) {
         guard startDate < endDate else { return (0, 0) }
-        
+
         let calendar = Calendar.current
         var weekdays = 0
         var weekends = 0
         var date = startDate
-        
+
         while date <= endDate {
             if calendar.isDateInWeekend(date) {
                 weekends += 1
             } else {
                 weekdays += 1
             }
-            
+
             if let nextDay = calendar.date(byAdding: .day, value: 1, to: date) {
                 date = nextDay
             }
         }
-        
+
         return (weekdays, weekends)
     }
+
 }

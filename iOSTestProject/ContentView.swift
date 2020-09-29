@@ -44,7 +44,11 @@ struct ContentView: View {
                 }
                 .alert(isPresented: $showingAlert) {
                     let hotelName = bestHotel?.name ?? ""
-                    return Alert(title: Text("Best hotel"), message: Text(hotelName), dismissButton: .default(Text("Got it!")))
+                    return Alert(
+                        title: Text("Best hotel"),
+                        message: Text(hotelName),
+                        dismissButton: .default(Text("Got it!"))
+                    )
                 }
             }.padding(16)
         }
