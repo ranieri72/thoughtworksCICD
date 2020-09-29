@@ -17,8 +17,8 @@
 		A90E0A982354D59300B7AEFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A90E0A972354D59300B7AEFC /* Assets.xcassets */; };
 		A90E0A9B2354D59300B7AEFC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A90E0A9A2354D59300B7AEFC /* Preview Assets.xcassets */; };
 		A90E0A9E2354D59300B7AEFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90E0A9C2354D59300B7AEFC /* LaunchScreen.storyboard */; };
-		A90E0AA92354D59300B7AEFC /* iOSTestProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E0AA82354D59300B7AEFC /* iOSTestProjectTests.swift */; };
-		A90E0AB42354D59300B7AEFC /* iOSTestProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E0AB32354D59300B7AEFC /* iOSTestProjectUITests.swift */; };
+		A90E0AA92354D59300B7AEFC /* ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E0AA82354D59300B7AEFC /* ProjectTests.swift */; };
+		A90E0AB42354D59300B7AEFC /* ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E0AB32354D59300B7AEFC /* ProjectUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,10 +52,10 @@
 		A90E0A9D2354D59300B7AEFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A90E0A9F2354D59300B7AEFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A90E0AA42354D59300B7AEFC /* iOSTestProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSTestProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A90E0AA82354D59300B7AEFC /* iOSTestProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTestProjectTests.swift; sourceTree = "<group>"; };
+		A90E0AA82354D59300B7AEFC /* ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTests.swift; sourceTree = "<group>"; };
 		A90E0AAA2354D59300B7AEFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A90E0AAF2354D59300B7AEFC /* iOSTestProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSTestProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A90E0AB32354D59300B7AEFC /* iOSTestProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTestProjectUITests.swift; sourceTree = "<group>"; };
+		A90E0AB32354D59300B7AEFC /* ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectUITests.swift; sourceTree = "<group>"; };
 		A90E0AB52354D59300B7AEFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,7 +157,7 @@
 		A90E0AA72354D59300B7AEFC /* iOSTestProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				A90E0AA82354D59300B7AEFC /* iOSTestProjectTests.swift */,
+				A90E0AA82354D59300B7AEFC /* ProjectTests.swift */,
 				A90E0AAA2354D59300B7AEFC /* Info.plist */,
 			);
 			path = iOSTestProjectTests;
@@ -166,7 +166,7 @@
 		A90E0AB22354D59300B7AEFC /* iOSTestProjectUITests */ = {
 			isa = PBXGroup;
 			children = (
-				A90E0AB32354D59300B7AEFC /* iOSTestProjectUITests.swift */,
+				A90E0AB32354D59300B7AEFC /* ProjectUITests.swift */,
 				A90E0AB52354D59300B7AEFC /* Info.plist */,
 			);
 			path = iOSTestProjectUITests;
@@ -317,7 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A90E0AA92354D59300B7AEFC /* iOSTestProjectTests.swift in Sources */,
+				A90E0AA92354D59300B7AEFC /* ProjectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A90E0AB42354D59300B7AEFC /* iOSTestProjectUITests.swift in Sources */,
+				A90E0AB42354D59300B7AEFC /* ProjectUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

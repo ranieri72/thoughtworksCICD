@@ -1,6 +1,6 @@
 import XCTest
 
-class iOSTestProjectUITests: XCTestCase {
+class ProjectUITests: XCTestCase {
     func testThatFails() {
         let app = XCUIApplication()
         app.launch()

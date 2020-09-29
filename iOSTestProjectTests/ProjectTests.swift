@@ -1,7 +1,7 @@
 import XCTest
 @testable import iOSTestProject
 
-class iOSTestProjectTests: XCTestCase {
+class ProjectTests: XCTestCase {
     
     var sut: HotelManagerProtocol?
     var dateFormatter: DateFormatter?
