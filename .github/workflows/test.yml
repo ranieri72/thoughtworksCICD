@@ -11,8 +11,20 @@ on:
         - cron: "0 2 * * 1-5"
 
 jobs:
-  build:
-
+    SwiftLint:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: GitHub Action for SwiftLint
+      uses: norio-nomura/action-swiftlint@3.1.0
+      with:
+        args: --strict
+        
+jobs:
+    Build and test:
     runs-on: macos-10.15
 
     steps:
@@ -24,12 +36,7 @@ jobs:
       
     - name: Xcode version
       run: /usr/bin/xcodebuild -version
-      
-    - name: GitHub Action for SwiftLint
-      uses: norio-nomura/action-swiftlint@3.1.0
-      with:
-        args: --strict
-      
+    
     - name: Build
       run: exec ./.github/scripts/build_app.sh
       
