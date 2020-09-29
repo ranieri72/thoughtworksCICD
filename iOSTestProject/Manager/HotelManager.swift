@@ -38,7 +38,7 @@ class HotelManager: HotelManagerProtocol {
 
         return bestBooking.hotel
     }
-    
+
     private func countDays(startDate: Date, endDate: Date) -> (weekdays: Int, weekends: Int) {
         guard startDate < endDate else { return (0, 0) }
 
