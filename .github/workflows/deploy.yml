@@ -32,7 +32,7 @@ jobs:
           run: /usr/bin/xcodebuild -version
       
         - name: Build
-          run: sudo exec ./.github/scripts/build_app.sh
+          run: exec sudo ./.github/scripts/build_app.sh
       
         - name: Run tests
           run: exec ./.github/scripts/test_app.sh
