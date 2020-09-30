@@ -3,6 +3,6 @@
 set -eo pipefail
 
 xcodebuild -project iOSTestProject.xcodeproj \
-            -scheme iOSTestProject\ iOS \
+            -scheme iOSTestProject \
             -destination platform=iOS\ Simulator,OS=13.3,name=iPhone\ 11 \
             clean build | xcpretty
