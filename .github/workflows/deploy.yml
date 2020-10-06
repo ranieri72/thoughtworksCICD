@@ -1,0 +1,65 @@
+name: Deploy
+
+on:
+    pull_request:
+        branches:
+        - releases/*
+
+jobs:
+    SwiftLint:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
+  
+        - name: GitHub Action for SwiftLint
+          uses: norio-nomura/action-swiftlint@3.1.0
+          #with:
+            #args: --strict
+
+    Build-Test-Deploy:
+        runs-on: macos-10.15
+        timeout-minutes: 30
+
+        steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
+
+        - name: Select Xcode
+          run: sudo xcode-select -switch /Applications/Xcode_11.3.app
+      
+        - name: Xcode version
+          run: /usr/bin/xcodebuild -version
+      
+        - name: Build
+          run: exec ./.github/scripts/build_app.sh
+      
+        - name: Run tests
+          run: exec ./.github/scripts/test_app.sh
+
+        - uses: Apple-Actions/import-codesign-certs@v1
+          with:
+            p12-file-base64: ${{ secrets.CERTIFICATES_FILE_BASE64 }}
+            p12-password: ${{ secrets.CERTIFICATES_PASSWORD }}
+
+        - uses: Apple-Actions/download-provisioning-profiles@v1
+          with:
+            bundle-id: codes.orj.Example-iOS
+            issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
+            api-key-id: ${{ secrets.APPSTORE_KEY_ID }}
+            api-private-key: ${{ secrets.APPSTORE_PRIVATE_KEY }}
+
+        - name: "Generate Build Number"
+          id: buildnumber
+          uses: einaregilsson/build-number@v2
+          with:
+            token: ${{ secrets.github_token }}
+
+        - name: Upload app to TestFlight
+          uses: apple-actions/upload-testflight-build@v1
+          with:
+            app-path: .build/Artifacts/Example-iOS.ipa/Example-iOS.ipa
+            issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
+            api-key-id: ${{ secrets.APPSTORE_KEY_ID }}
+            api-private-key: ${{ secrets.APPSTORE_PRIVATE_KEY }}

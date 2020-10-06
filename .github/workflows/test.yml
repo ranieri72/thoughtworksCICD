@@ -1,0 +1,40 @@
+name: Test
+
+on:
+    pull_request:
+        branches:
+        - master
+    schedule:
+        - cron: "0 2 * * 1-5"
+
+jobs:
+    SwiftLint:
+        runs-on: ubuntu-latest
+    
+        steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
+      
+        - name: GitHub Action for SwiftLint
+          uses: norio-nomura/action-swiftlint@3.1.0
+          #with:
+            #args: --strict
+
+    Build-Test:
+        runs-on: macos-10.15
+
+        steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
+      
+        - name: Select Xcode
+          run: sudo xcode-select -switch /Applications/Xcode_11.3.app
+      
+        - name: Xcode version
+          run: /usr/bin/xcodebuild -version
+    
+        - name: Build
+          run: exec ./.github/scripts/build_app.sh
+      
+        - name: Run tests
+          run: exec ./.github/scripts/test_app.sh
